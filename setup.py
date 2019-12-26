@@ -10,19 +10,19 @@ if sys.version_info < (3, 6):
     raise RuntimeError("aiohttp 4.x requires Python 3.6+")
 
 
-NO_EXTENSIONS = True#bool(os.environ.get('AIOHTTP_NO_EXTENSIONS'))  # type: bool
+NO_EXTENSIONS = True  # bool(os.environ.get('AIOHTTP_NO_EXTENSIONS'))  # type: bool
 
 
 if sys.implementation.name != "cpython":
     NO_EXTENSIONS = True
 
 
-if (IS_GIT_REPO and
-        not (HERE / 'vendor/http-parser/README.md').exists()):
-    print("Install submodules when building from git clone", file=sys.stderr)
-    print("Hint:", file=sys.stderr)
-    print("  git submodule update --init", file=sys.stderr)
-    sys.exit(2)
+# if (IS_GIT_REPO and
+#         not (HERE / 'vendor/http-parser/README.md').exists()):
+#     print("Install submodules when building from git clone", file=sys.stderr)
+#     print("Hint:", file=sys.stderr)
+#     print("  git submodule update --init", file=sys.stderr)
+#     sys.exit(2)
 
 
 # NOTE: makefile cythonizes all Cython modules
