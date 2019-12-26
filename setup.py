@@ -42,12 +42,12 @@ extensions = [Extension('aiohttp._websocket', ['aiohttp/_websocket.c']),
                         ['aiohttp/_http_writer.c'])]
 
 
-txt = (HERE / 'aiohttp' / '__init__.py').read_text('utf-8')
-try:
-    version = re.findall(r"^__version__ = '([^']+)'\r?$",
-                         txt, re.M)[0]
-except IndexError:
-    raise RuntimeError('Unable to determine version.')
+# txt = (HERE / 'aiohttp' / '__init__.py').read_text('utf-8')
+# try:
+#     version = re.findall(r"^__version__ = '([^']+)'\r?$",
+#                          txt, re.M)[0]
+# except IndexError:
+#     raise RuntimeError('Unable to determine version.')
 
 install_requires = [
     'attrs>=17.3.0',
@@ -60,15 +60,14 @@ install_requires = [
 ]
 
 
-def read(f):
-    return (HERE / f).read_text('utf-8').strip()
+# def read(f):
+#     return (HERE / f).read_text('utf-8').strip()
 
 
 args = dict(
     name='aiohttp',
-    version=version,
+    version="4.j",
     description='Async http client/server framework (asyncio)',
-    long_description='\n\n'.join((read('README.rst'), read('CHANGES.rst'))),
     long_description_content_type="text/x-rst",
     classifiers=[
         'License :: OSI Approved :: Apache Software License',
